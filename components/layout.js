@@ -12,7 +12,7 @@ export default function Layout({title, keywords, description, children}) {
         <title>{title}</title>
         <meta name='description' content={description} />
         <meta name='keywords' content={keywords} />
-        <link rel='preconnect' href='https://fonts.gstatic.com' crossorigin />
+        <link rel='preconnect' href='https://fonts.gstatic.com' crossOrigin />
         <link
           href='https://fonts.googleapis.com/css2?family=Architects+Daughter&family=Poppins:wght@300;400&family=Work+Sans:wght@300;400;500&family=Urbanist:wght@300;400&display=swap'
           rel='stylesheet'
@@ -20,7 +20,7 @@ export default function Layout({title, keywords, description, children}) {
       </Head>
 
       <Navbar />
-      <main className='px-8'>{children}</main>
+      <main>{children}</main>
       <Footer />
     </div>
   )

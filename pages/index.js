@@ -62,9 +62,19 @@ const query = gql`
             serviceOption2Description
             serviceOption3Description
             serviceOption4Description
+            serviceOption1LongDescription
+            serviceOption2LongDescription
+            serviceOption3LongDescription
+            serviceOption4LongDescription
             buttonText
             id
           }
+          __typename
+        }
+        ... on CtaRecord {
+          text
+          buttonText
+          buttonUrl
           __typename
         }
       }

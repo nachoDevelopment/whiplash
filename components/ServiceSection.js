@@ -1,5 +1,6 @@
 import React from 'react'
 import Link from 'next/link'
+import Modal from './Modal'
 import {string} from 'postcss-selector-parser'
 
 export default function ServiceSection({details}) {
@@ -11,8 +12,8 @@ export default function ServiceSection({details}) {
       {details.service.map((section, i) => (
         <div
           key={section.id}
-          className={`my-12 w-1/2 mx-auto ${
-            isOdd(i) ? 'border-l border-gray-500' : ''
+          className={`my-12 px-6 w-full md:w-1/2 mx-auto ${
+            isOdd(i) ? 'md:border-l border-gray-500' : ''
           }`}>
           <div className='mx-auto w-max'>
             <h3 className='font-secondary text-5xl'>{section.serviceTitle}</h3>
@@ -31,7 +32,7 @@ export default function ServiceSection({details}) {
                 )
               })}
             </div>
-            <div className='grid grid-cols-2 gap-4'>
+            <div className='grid grid-cols-1 sm:grid-cols-2 gap-5 mb-8'>
               <div className='font-urban my-4'>
                 <p className='text-lg text-primary-button uppercase tracking-widest mb-2'>
                   {section.serviceOption1}
@@ -65,11 +66,12 @@ export default function ServiceSection({details}) {
                 </p>
               </div>
             </div>
-            <Link href='/'>
-              <a className='bg-primary-button text-white py-3 px-6 mt-9 w-fit'>
+            {/* <Link href='/'>
+              <a className='bg-primary-button text-white py-3 px-6 mt-9 w-fit shadow-2xl shadow-[-8px_8px_0px_0px_rgba(0,0,0,0.3)]'>
                 {section.buttonText}
               </a>
-            </Link>
+            </Link> */}
+            <Modal section={section} />
           </div>
         </div>
       ))}

@@ -10,6 +10,8 @@ module.exports = {
           base: '#201715',
           background: '#FAFAFA',
           button: '#9C4626',
+          cta: '#618CAC',
+          softGrey: '#C4C4C4',
         },
       },
     },
