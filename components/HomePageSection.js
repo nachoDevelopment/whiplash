@@ -3,6 +3,7 @@ import PageHeader from './PageHeader'
 import PlainTextSection from './PlainTextSection'
 import ServiceSection from './ServiceSection'
 import CTA from './CTA'
+import PortfolioSection from './PortfolioSection'
 
 export default function HomePageSection({details}) {
   if (details.__typename === 'PageHeaderRecord') {
@@ -13,6 +14,8 @@ export default function HomePageSection({details}) {
     return <ServiceSection details={details} />
   } else if (details.__typename === 'CtaRecord') {
     return <CTA details={details} />
+  } else if (details.__typename === 'PortfolioSectionRecord') {
+    return <PortfolioSection details={details} />
   }
   return (
     <div>
