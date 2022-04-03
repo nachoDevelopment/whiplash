@@ -3,8 +3,15 @@ import Image from 'next/image'
 import React, {useState} from 'react'
 
 export default function Navbar() {
-  function toggleDarkMode(e) {
-    document.querySelector('body').classList.toggle('dark')
+  const [isExpanded, toggleExpansion] = useState(false)
+  const [menuActive, setMenuState] = useState(false)
+
+  function expand() {
+    toggleExpansion(!isExpanded)
+  }
+
+  function isActive() {
+    setMenuState(!menuActive)
   }
   return (
     <nav>
@@ -22,7 +29,7 @@ export default function Navbar() {
               </a>
             </Link>
           </div>
-          <div className='flex items-center flex-1 justify-center'>
+          <div className='hidden sm:flex items-center flex-1 justify-center'>
             <Link href='/'>
               <a className='py-4 px-3 font-primary tracking-widest text-xs text-primary-base hover:underline'>
                 Shop
@@ -34,7 +41,7 @@ export default function Navbar() {
               </a>
             </Link>
           </div>
-          <div className='flex items-center flex-1 justify-center z-10'>
+          <div className='hidden sm:flex items-center flex-1 justify-center z-10'>
             <Link href='/'>
               <a className='py-4 px-3 ml-auto font-primary tracking-widest text-xs hover:underline text-primary-base'>
                 Cart
@@ -47,7 +54,7 @@ export default function Navbar() {
             </Link>
           </div>
           {/* mobile button goes here */}
-          <div className='md:hidden flex items-center'>
+          <div className='sm:hidden flex items-center z-10'>
             <button className='mobile-menu-button'>
               <svg
                 xmlns='http://www.w3.org/2000/svg'
@@ -67,7 +74,7 @@ export default function Navbar() {
         </div>
       </div>
       {/* Mobile menu goes here */}
-      <div className='mobile-menu bg-primary-base absolute h-screen w-screen transition duration-500 ease-in-out hidden md:hidden md:opacity-0'>
+      <div className='mobile-menu bg-primary-base absolute h-screen w-screen transition duration-500 ease-in-out hidden sm:hidden sm:opacity-0'>
         <Link href='/'>
           <a className='block py-4 px-4 text-sm font-italiana tracking-widest hover:underline'>
             Home

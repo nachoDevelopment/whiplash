@@ -16,7 +16,9 @@ export default function ServiceSection({details}) {
             isOdd(i) ? 'md:border-l border-gray-500' : ''
           }`}>
           <div className='mx-auto w-max'>
-            <h3 className='font-secondary text-5xl'>{section.serviceTitle}</h3>
+            <h3 className='font-secondary text-3xl md:text-5xl'>
+              {section.serviceTitle}
+            </h3>
             <div className='relative'>
               {section.serviceSubtitle.split(',').map((item, i) => {
                 return (
