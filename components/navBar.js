@@ -34,7 +34,7 @@ export default function Navbar() {
               </a>
             </Link>
           </div>
-          <div className='flex items-center flex-1 justify-center'>
+          <div className='flex items-center flex-1 justify-center z-10'>
             <Link href='/'>
               <a className='py-4 px-3 ml-auto font-primary tracking-widest text-xs hover:underline text-primary-base'>
                 Cart

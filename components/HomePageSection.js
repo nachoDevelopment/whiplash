@@ -4,6 +4,7 @@ import PlainTextSection from './PlainTextSection'
 import ServiceSection from './ServiceSection'
 import CTA from './CTA'
 import PortfolioSection from './PortfolioSection'
+import ImageTextBlock from './ImageTextBlock'
 
 export default function HomePageSection({details}) {
   if (details.__typename === 'PageHeaderRecord') {
@@ -16,6 +17,8 @@ export default function HomePageSection({details}) {
     return <CTA details={details} />
   } else if (details.__typename === 'PortfolioSectionRecord') {
     return <PortfolioSection details={details} />
+  } else if (details.__typename === 'ImageTextBlockRecord') {
+    return <ImageTextBlock details={details} />
   }
   return (
     <div>

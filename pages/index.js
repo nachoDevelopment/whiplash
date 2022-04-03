@@ -1,10 +1,17 @@
 import Layout from '../components/layout'
 import {gql, GraphQLClient} from 'graphql-request'
 import HomePageSection from '../components/HomePageSection'
+import Image from 'next/image'
 
 export default function Home({homePage}) {
   return (
     <div className='bg-primary-background'>
+      <div className='absolute -right-0'>
+        <Image src='/bubble-1.png' alt='bubble' width={207} height={235} />
+      </div>
+      <div className='absolute -right-0 top-20'>
+        <Image src='/bubble-2.png' alt='bubble' width={184} height={953} />
+      </div>
       <Layout>
         <div>
           {homePage.pageContent.map((section) => (
@@ -103,6 +110,29 @@ const query = gql`
             }
             title
           }
+        }
+        ... on ImageTextBlockRecord {
+          title
+          subtitle
+          text
+          imageAlignment
+          image {
+            responsiveImage(imgixParams: {auto: format}) {
+              srcSet
+              webpSrcSet
+              sizes
+              src
+              width
+              height
+              aspectRatio
+              alt
+              title
+              base64
+            }
+          }
+          buttonText
+          buttonUrl
+          __typename
         }
       }
     }
