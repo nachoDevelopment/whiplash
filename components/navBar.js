@@ -55,7 +55,14 @@ export default function Navbar() {
           </div>
           {/* mobile button goes here */}
           <div className='sm:hidden flex items-center z-10'>
-            <button className='mobile-menu-button'>
+            <button
+              className='mobile-menu-button'
+              aria-label='Menu'
+              aria-controls='navigation'
+              onClick={() => {
+                expand()
+                isActive()
+              }}>
               <svg
                 xmlns='http://www.w3.org/2000/svg'
                 className='h-6 w-6'
@@ -74,30 +81,33 @@ export default function Navbar() {
         </div>
       </div>
       {/* Mobile menu goes here */}
-      <div className='mobile-menu bg-primary-base absolute h-screen w-screen transition duration-500 ease-in-out hidden sm:hidden sm:opacity-0'>
+      <div
+        className={`mobile-menu bg-primary-background flex-col items-center absolute h-full w-screen transition duration-500 ease-in-out ${
+          isExpanded ? 'flex' : 'hidden'
+        } sm:hidden sm:opacity-0 z-10`}>
         <Link href='/'>
           <a className='block py-4 px-4 text-sm font-italiana tracking-widest hover:underline'>
             Home
           </a>
         </Link>
-        <Link href='/'>
+        <Link href='/shop'>
           <a className='block py-4 px-4 text-sm font-italiana tracking-widest hover:underline'>
-            Gallery
+            Shop
           </a>
         </Link>
-        <Link href='/'>
-          <a className='block py-4 px-4 text-sm font-italiana tracking-widest hover:underline'>
-            Services
-          </a>
-        </Link>
-        <Link href='/'>
+        <Link href='/about'>
           <a className='block py-4 px-4 text-sm font-italiana tracking-widest hover:underline'>
             About
           </a>
         </Link>
-        <Link href='/'>
+        <Link href='/cart'>
           <a className='block py-4 px-4 text-sm font-italiana tracking-widest hover:underline'>
-            Contact
+            Cart
+          </a>
+        </Link>
+        <Link href='/contact'>
+          <a className='block py-4 px-4 text-sm font-italiana tracking-widest hover:underline'>
+            Get in touch
           </a>
         </Link>
       </div>

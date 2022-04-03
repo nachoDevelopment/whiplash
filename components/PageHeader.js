@@ -4,7 +4,7 @@ import Image from 'next/image'
 
 export default function PageHeader({details}) {
   return (
-    <div className='mx-auto relative px-8 py-14 max-w-3xl'>
+    <div className='mx-auto relative px-8 py-14 max-w-xl md:max-w-3xl'>
       <Image
         layout='fill'
         objectFit='contain'
