@@ -30,7 +30,7 @@ export default function Navbar() {
             </Link>
           </div>
           <div className='hidden sm:flex items-center flex-1 justify-center'>
-            <Link href='/'>
+            <Link href='/shop'>
               <a className='py-4 px-3 font-primary tracking-widest text-xs text-primary-base hover:underline'>
                 Shop
               </a>
@@ -47,7 +47,7 @@ export default function Navbar() {
                 Cart
               </a>
             </Link>
-            <Link href='/'>
+            <Link href='/contact'>
               <a className='py-4 px-3 font-primary tracking-widest hover:underline text-xs text-primary-base'>
                 Get in touch
               </a>
