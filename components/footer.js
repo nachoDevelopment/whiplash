@@ -12,7 +12,7 @@ export default function Footer() {
               .
             </span>
           </h1>
-          <h2 className='font-tertiary text-sm tracking-wide uppercase text-white'>
+          <h2 className='font-tertiary text-sm tracking-wide uppercase text-white -mt-11'>
             A Commercial & Creative House
           </h2>
         </div>
