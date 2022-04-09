@@ -35,7 +35,7 @@ export default function Navbar() {
                 Shop
               </a>
             </Link>
-            <Link href='/'>
+            <Link href='/about'>
               <a className='py-4 px-3 font-primary tracking-widest hover:underline text-xs text-primary-base'>
                 About
               </a>

@@ -3,7 +3,7 @@ import Image from 'next/image'
 
 export default function Footer() {
   return (
-    <nav className='bg-black text-white px-5'>
+    <nav className='bg-black text-white px-5 relative'>
       <div className='flex justify-center flex-col items-center max-w-[1126px] mx-auto border-b-[1px] border-white/10 pb-5'>
         <div>
           <h1 className='font-secondary text-5xl -mb-2'>

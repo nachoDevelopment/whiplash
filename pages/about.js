@@ -3,7 +3,7 @@ import {gql, GraphQLClient} from 'graphql-request'
 import PageContent from '../components/PageContent'
 import Image from 'next/image'
 
-export default function Home({homePage}) {
+export default function Home({about}) {
   return (
     <div className='bg-primary-background relative overflow-hidden'>
       <div className='absolute -right-0'>
@@ -32,7 +32,7 @@ export default function Home({homePage}) {
       </div>
       <Layout>
         <div className='relative'>
-          {homePage.pageContent.map((section) => (
+          {about.pageContent.map((section) => (
             <PageContent details={section} key={section.id} />
           ))}
         </div>
@@ -43,7 +43,7 @@ export default function Home({homePage}) {
 
 const query = gql`
   query {
-    homePage {
+    about {
       id
       name
       pageContent {

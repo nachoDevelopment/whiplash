@@ -6,7 +6,7 @@ import CTA from './CTA'
 import PortfolioSection from './PortfolioSection'
 import ImageTextBlock from './ImageTextBlock'
 
-export default function HomePageSection({details}) {
+export default function PageContent({details}) {
   if (details.__typename === 'PageHeaderRecord') {
     return <PageHeader details={details} />
   } else if (details.__typename === 'PlainTextSectionRecord') {
