@@ -2,43 +2,44 @@ import Layout from '../components/layout'
 import {gql, GraphQLClient} from 'graphql-request'
 import PageContent from '../components/PageContent'
 import Image from 'next/image'
-import Script from 'next/script'
 
 export default function Home({shop}) {
   return (
-    <div className='bg-primary-background relative overflow-hidden'>
-      <div className='absolute -right-0'>
-        <Image src='/bubble-1.png' alt='bubble' width={207} height={235} />
-      </div>
-      <div className='absolute -right-0 top-20'>
-        <Image src='/bubble-2.png' alt='bubble' width={184} height={953} />
-      </div>
-      <div className='absolute -left-0 top-20'>
-        <Image src='/bubble-3.png' alt='bubble' width={188} height={1054} />
-      </div>
-      <div className='absolute -left-0 top-[1118px]'>
-        <Image src='/bubble-4.png' alt='bubble' width={277} height={1054} />
-      </div>
-      <div className='absolute -right-0 top-[1900px]'>
-        <Image src='/bubble-5.png' alt='bubble' width={106} height={776} />
-      </div>
-      <div className='absolute -right-0 top-[3100px]'>
-        <Image src='/bubble-6.png' alt='bubble' width={139} height={795} />
-      </div>
-      <div className='absolute -left-0 top-[3700px]'>
-        <Image src='/bubble-7.png' alt='bubble' width={54} height={975} />
-      </div>
-      <div className='absolute -right-0 top-[3900px]'>
-        <Image src='/bubble-8.png' alt='bubble' width={139} height={795} />
-      </div>
-      <Layout>
-        <div className='relative'>
-          {shop.pageContent.map((section) => (
-            <PageContent details={section} key={section.id} />
-          ))}
+    <>
+      <div className='bg-primary-background relative overflow-hidden'>
+        <div className='absolute -right-0'>
+          <Image src='/bubble-1.png' alt='bubble' width={207} height={235} />
         </div>
-      </Layout>
-    </div>
+        <div className='absolute -right-0 top-20'>
+          <Image src='/bubble-2.png' alt='bubble' width={184} height={953} />
+        </div>
+        <div className='absolute -left-0 top-20'>
+          <Image src='/bubble-3.png' alt='bubble' width={188} height={1054} />
+        </div>
+        <div className='absolute -left-0 top-[1118px]'>
+          <Image src='/bubble-4.png' alt='bubble' width={277} height={1054} />
+        </div>
+        <div className='absolute -right-0 top-[1900px]'>
+          <Image src='/bubble-5.png' alt='bubble' width={106} height={776} />
+        </div>
+        <div className='absolute -right-0 top-[3100px]'>
+          <Image src='/bubble-6.png' alt='bubble' width={139} height={795} />
+        </div>
+        <div className='absolute -left-0 top-[3700px]'>
+          <Image src='/bubble-7.png' alt='bubble' width={54} height={975} />
+        </div>
+        <div className='absolute -right-0 top-[3900px]'>
+          <Image src='/bubble-8.png' alt='bubble' width={139} height={795} />
+        </div>
+        <Layout>
+          <div className='relative'>
+            {shop.pageContent.map((section) => (
+              <PageContent details={section} key={section.id} />
+            ))}
+          </div>
+        </Layout>
+      </div>
+    </>
   )
 }
 

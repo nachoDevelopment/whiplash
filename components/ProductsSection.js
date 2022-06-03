@@ -1,11 +1,9 @@
 import React from 'react'
-import Script from 'next/script'
 import Image from 'next/image'
 
 export default function ProductsSection({details}) {
   return (
     <section>
-      <Script src='https://gumroad.com/js/gumroad.js'></Script>
       <div className='my-16 mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-14 px-8'>
         {details.products.map((section, i) => (
           <div key={section.id} className='flex flex-col mx-auto'>

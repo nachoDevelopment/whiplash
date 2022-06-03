@@ -25,9 +25,11 @@ export default function PageHeader({details}) {
               )
             })}
           </h2>
-          <p className='font-tertiary font-light text-sm tracking-wide mt-3 w-[40ch]'>
-            {details.text}
-          </p>
+          <div
+            className='font-tertiary font-light text-sm tracking-wide mt-3 w-[40ch]'
+            dangerouslySetInnerHTML={{
+              __html: details.text,
+            }}></div>
         </div>
       </div>
       <Link href='/'>

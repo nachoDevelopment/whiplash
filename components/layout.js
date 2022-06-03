@@ -2,6 +2,7 @@ import Head from 'next/head'
 import {useRouter} from 'next/router'
 import Navbar from './navBar'
 import Footer from './footer'
+import Script from 'next/script'
 
 export default function Layout({title, keywords, description, children}) {
   const router = useRouter()
@@ -18,6 +19,7 @@ export default function Layout({title, keywords, description, children}) {
           rel='stylesheet'
         />
       </Head>
+      <Script src='https://gumroad.com/js/gumroad.js' />
 
       <Navbar />
       <main>{children}</main>
