@@ -162,7 +162,30 @@ const query = gql`
             productUrl
             productCategory
             productPrice
+            productImage {
+              responsiveImage(imgixParams: {auto: format}) {
+                srcSet
+                webpSrcSet
+                sizes
+                src
+                width
+                height
+                aspectRatio
+                alt
+                title
+                base64
+              }
+            }
           }
+        }
+        ... on TextAndButtonSectionRecord {
+          id
+          __typename
+          title
+          subtitle
+          buttonUrl
+          buttonText
+          text
         }
       }
     }

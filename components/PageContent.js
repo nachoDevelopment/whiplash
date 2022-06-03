@@ -6,6 +6,7 @@ import CTA from './CTA'
 import PortfolioSection from './PortfolioSection'
 import ImageTextBlock from './ImageTextBlock'
 import ProductsSection from './ProductsSection'
+import TextAndButtonSection from './TextAndButtonSection'
 
 export default function PageContent({details}) {
   if (details.__typename === 'PageHeaderRecord') {
@@ -22,10 +23,8 @@ export default function PageContent({details}) {
     return <ImageTextBlock details={details} />
   } else if (details.__typename === 'ProductEmbedRecord') {
     return <ProductsSection details={details} />
+  } else if (details.__typename === 'TextAndButtonSectionRecord') {
+    return <TextAndButtonSection details={details} />
   }
-  return (
-    <div>
-      <h1>Home Page Section</h1>
-    </div>
-  )
+  return
 }
