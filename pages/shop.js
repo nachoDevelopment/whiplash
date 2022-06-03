@@ -2,6 +2,7 @@ import Layout from '../components/layout'
 import {gql, GraphQLClient} from 'graphql-request'
 import PageContent from '../components/PageContent'
 import Image from 'next/image'
+import Script from 'next/script'
 
 export default function Home({shop}) {
   return (
@@ -151,6 +152,17 @@ const query = gql`
           buttonText
           buttonUrl
           __typename
+        }
+        ... on ProductEmbedRecord {
+          __typename
+          id
+          products {
+            id
+            productTitle
+            productUrl
+            productCategory
+            productPrice
+          }
         }
       }
     }

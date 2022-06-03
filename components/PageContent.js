@@ -5,6 +5,7 @@ import ServiceSection from './ServiceSection'
 import CTA from './CTA'
 import PortfolioSection from './PortfolioSection'
 import ImageTextBlock from './ImageTextBlock'
+import ProductsSection from './ProductsSection'
 
 export default function PageContent({details}) {
   if (details.__typename === 'PageHeaderRecord') {
@@ -19,6 +20,8 @@ export default function PageContent({details}) {
     return <PortfolioSection details={details} />
   } else if (details.__typename === 'ImageTextBlockRecord') {
     return <ImageTextBlock details={details} />
+  } else if (details.__typename === 'ProductEmbedRecord') {
+    return <ProductsSection details={details} />
   }
   return (
     <div>

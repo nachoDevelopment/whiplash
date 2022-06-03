@@ -5,3 +5,7 @@
 .service-option p {
   margin-bottom: 20px;
 }
+
+span.gumroad-button-logo {
+  display: none !important;
+}
